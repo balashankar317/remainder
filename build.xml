@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="remainder" basedir="." default="execute">
+    <target name="clean">
+        <delete dir="build/classes"/>
+        <delete dir="build"/>
+    </target>
+    <target name="createdirs" depends="clean">
+        <mkdir dir="build"/>
+        <mkdir dir="build/classes"/>
+    </target>
+    <target name="compile" depends="createdirs">
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
+    <target name="execute" depends="compile">
+        <java classname="com.remainder.routines.AlarmRoutine" classpath="build/classes" />
+    </target>
+</project>
